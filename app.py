@@ -13,6 +13,7 @@ def func(img):
   images = np.array([x],dtype="float32")
   classes = model.predict(images)
   result = label_dict[np.argmax(classes)]
+  return result
 
 def main():
   st.title("Face Recognition Based Attendence System Prototype")
