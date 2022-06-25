@@ -23,6 +23,10 @@ def main():
   if uploaded_file is not None:
      file_bytes = np.asarray(bytearray(uploaded_file.read()), dtype=np.uint8)
      image = cv2.imdecode(file_bytes, 1)
+     face_cascade = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
+     faces = face_cascade.detectMultiScale(image, 1.3, 5)
+     for (x,y,w,h) in faces:
+        image = image[y:y+h, x:x+w]
      result=func(image)
      st.write(result)
 
