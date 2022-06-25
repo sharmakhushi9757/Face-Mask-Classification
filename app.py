@@ -16,7 +16,7 @@ def func(img):
   return result
 
 def main():
-  st.title("Face Recognition Based Attendence System Prototype")
+  st.title("Mask classification")
 
   uploaded_file = st.file_uploader("Upload image", type=['jpeg', 'png', 'jpg', 'webp'])
     
