@@ -39,7 +39,7 @@ def main():
      file_bytes = np.asarray(bytearray(uploaded_file.read()), dtype=np.uint8)
      image = cv2.imdecode(file_bytes, 1)
      res = detect_face(image)
-     st.write(res)
+     
      
      if res:
         res = max(res, key = lambda b: b['box'][2] *b['box'][3])
